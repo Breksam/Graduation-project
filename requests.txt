@@ -1,0 +1,118 @@
+=========== Base URL =============
+http://127.0.0.1:8000/api/ 
+
+*************** Authentication Api ***************
+
+1- [POST]  Register:  http://127.0.0.1:8000/api/register
+POST Fields: (first_name, last_name, email, password, password_confirmation, gender) 
+
+2- [POST]  Login: http://127.0.0.1:8000/api/login 
+POST Fields: (email, password)
+
+3- [POST]  logout: http://127.0.0.1:8000/api/logout                     
+POST Fields: (token)
+
+4- [GET]   Profile (Show Data): http://127.0.0.1:8000/api/profile                    
+POST Fields: (token)
+GET Fields: data user (first_name, last_name, email, password, gender, birth_date, image, role)
+
+5- [PUT]   update user profile: http://127.0.0.1:8000/api/update                     
+POST Fields: (token, first_name, last_name, email, password, gender, birth_date, image)
+
+6- [POST]  Email Verification:http://127.0.0.1:8000/api/email_verification 	     
+POST Fields: (email, otp)
+
+7- [GET]   Done Email Verification: http://127.0.0.1:8000/api/email_verification         
+POST Fields: (token)
+GET Fields: success if email is verified
+
+8- [POST]  Forget Password: http://127.0.0.1:8000/api/password/forget-password   
+POST Fields: (email)
+GET Fields: send otp code to email address
+
+9- [POST]  Reset Password: http://127.0.0.1:8000/api/password/reset-password    
+POST Fields: (email, otp, password, password_confirmation)
+
+
+
+
+
+*************** Authorization Api *****************
+========== 1- Roles & Permissions ========
+
+1- [POST]   Add Roles & Permissions: http://127.0.0.1:8000/api/admin/role-permission
+POST Fields: (admintoken, role, permissions[ ] ) 
+
+2- [PUT]    Update Role & Permissions: http://127.0.0.1:8000/api/admin/role-permission/{id}      
+ POST Fields: ( admintoken, role, permissions[ ] )
+
+3- [DELETE] Delete Role: http://127.0.0.1:8000/api/admin/role-permission/{id} 	    
+POST Fields: (admintoken)
+
+4- [GET]    View Roles: http://127.0.0.1:8000/api/admin/role-permission             
+POST Fields: (admintoken)
+GET Fields: all data of all roles(id, name)	
+
+5- [GET]    Create Permissions to role: http://127.0.0.1:8000/api/admin/role-permission/create
+POST Fields: (admintoken)
+GET Fields: all permissions
+
+6- [GET]    Edit Role and his Permissions: http://127.0.0.1:8000/api/admin/role-permission/{id}/edit   
+POST Fields: (admintoken)
+GET Fields: one role and his permissions {
+Role: {id, name},
+ Permission {id, name}, 
+All_permissions {id, name}
+ }
+
+
+
+
+
+========== 2- User Crud =========
+
+1- [POST]   Add new User: http://127.0.0.1:8000/api/admin/user-crud 
+POST Fields: (admintoken, first_name, last_name, email, password, gender, birth_date, image, role) 
+
+2- [PUT]    Update User: http://127.0.0.1:8000/api/admin/user-crud/{id}       
+POST Fields: (admintoken, first_name, last_name, email, password, gender, birth_date, image, role) 
+
+3- [DELETE] Delete User: http://127.0.0.1:8000/api/admin/user-crud/{id} 	    
+POST Fields: (admintoken)
+
+4- [GET]    View all users: http://127.0.0.1:8000/api/admin/user-crud?{role=user}              
+POST Fields: (admintoken, role ‘option’)
+GET Fields: all data of all users	
+
+5- [GET]    Create New User: http://127.0.0.1:8000/api/admin/user-crud/create 
+POST Fields: (admintoken)
+GET Fields: all users
+
+6- [GET]    Edit User: http://127.0.0.1:8000/api/admin/user-crud/{id}/edit    
+POST Fields: (admintoken)
+GET Fields: User data
+
+
+
+
+
+
+*************** Recommendation system Api *****************
+1- [POST]   fill form Diet Recommendation: http://127.0.0.1:8000/api/diet
+POST Fields: (id, age, height, weight, gender, physical_activity, weight_loss_plan, meals, user_id)
+Return Response: (id, age, height, weight, gender, physical_activity, weight_loss_plan, meals, bmi, bmi_string, bmi_category, bmi_color, bmr, maintain_calories,user_id)
+
+
+2- [POST]   fill form Custom Foods Recommendation: http://127.0.0.1:8000/api/custom_food
+POST Fields: (id, calories, fatContent, satuatedfatContent, cholesterolContent, sodiumContent, carbohydrateContent, fiberContent, sugarContent, proteinContent, numberOfRecommendations, specifyingIngredients, user_id)
+Return Response: (id, calories, fatContent, satuatedfatContent, cholesterolContent, sodiumContent, carbohydrateContent, fiberContent, sugarContent, proteinContent, numberOfRecommendations, specifyingIngredients, user_id)
+
+
+3- [GET]   data that belong to form Diet Recommendation: http://127.0.0.1:8000/api/diet/{user_id}
+GET Response: (id, age, height, weight, gender, physical_activity, weight_loss_plan, meals, bmi, bmi_string, bmi_category, bmi_color, bmr, maintain_calories,user_id)
+
+
+4- [GET]   data that belong to form Custom Foods Recommendation: http://127.0.0.1:8000/api/custom_food/{user_id}
+GET Response: (id, calories, fatContent, satuatedfatContent, cholesterolContent, sodiumContent, carbohydrateContent, fiberContent, sugarContent, proteinContent, numberOfRecommendations, specifyingIngredients, user_id)
+
+
