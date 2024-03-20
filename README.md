@@ -1,64 +1,77 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# Graduation-project
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Create APIs with Laravel 9.X for PT Lifestyle to customize a suitable diet for users based on their data, and the user can define some foods that need a diet generated with the help of AI.
 
-## About Laravel
+## Getting Started
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+for user:
+- Handle registration, login, and logout controllers. 
+- user profile controller to get all user's data.
+- Use SMTP to send an email to verify the user's email address.
+- Respond to forgotten passwords and reset them by emailing the user an OTP code.
+- Handle mail notifications when the user has registered or logged in.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+For administrator: 
+- Create a user crud to manage all users.
+- Create a role crud to manage all roles in the system, such as admin, moderator, tester, etc.
+- Create permissions crud to set roles's permissions in the system.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+For the diet recommendation system:
+- Validate the user's data that helps generate a suitable diet and store it in a database.
+- Show the suitable diet after it is generated for the user.
+- Handle storing the user's data when specifying which foods the diet should be based on, then show it for him.
 
-## Learning Laravel
+### Tools
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- Laravel 9.x.
+- JWT.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Installing
 
-## Laravel Sponsors
+A step by step series of examples that tell you how to get a development
+environment running
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+clone Repository in your local pc
 
-### Premium Partners
+    git clone https://github.com/Breksam/Graduation-project.git
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+run on your cmd or terminal
 
-## Contributing
+    composer install
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+copy .env.example file to .env on the root folder
 
-## Code of Conduct
+    copy .env.example .env
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+then open your .env file and change the database name (DB_DATABASE) to whatever you have, username (DB_USERNAME) and password (DB_PASSWORD) field correspond to your configuration.
 
-## Security Vulnerabilities
+after that, set mail SMTP settings in .env file.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+open terminal in the project then:
+run
 
-## License
+    php artisan key:generate
+run
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+    php artisan migrate
+run
+
+    php artisan db:seed
+run
+
+    php artisan serve
+
+## Running the tests
+
+Now you can test Routes at postman Platform.
+
+### Sample Tests
+
+All requests to test: https://github.com/Breksam/Graduation-project/blob/master/requests.txt
+
+## Authors
+
+  - **Breksam Hassan Elsokkary** - (https://github.com/Breksam)
+
+
+
