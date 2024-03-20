@@ -34,9 +34,6 @@ GET Fields: send otp code to email address
 POST Fields: (email, otp, password, password_confirmation)
 
 
-
-
-
 *************** Authorization Api *****************
 ========== 1- Roles & Permissions ========
 
@@ -66,9 +63,6 @@ All_permissions {id, name}
  }
 
 
-
-
-
 ========== 2- User Crud =========
 
 1- [POST]   Add new User: http://127.0.0.1:8000/api/admin/user-crud 
@@ -93,26 +87,17 @@ POST Fields: (admintoken)
 GET Fields: User data
 
 
-
-
-
-
 *************** Recommendation system Api *****************
 1- [POST]   fill form Diet Recommendation: http://127.0.0.1:8000/api/diet
 POST Fields: (id, age, height, weight, gender, physical_activity, weight_loss_plan, meals, user_id)
 Return Response: (id, age, height, weight, gender, physical_activity, weight_loss_plan, meals, bmi, bmi_string, bmi_category, bmi_color, bmr, maintain_calories,user_id)
 
-
 2- [POST]   fill form Custom Foods Recommendation: http://127.0.0.1:8000/api/custom_food
 POST Fields: (id, calories, fatContent, satuatedfatContent, cholesterolContent, sodiumContent, carbohydrateContent, fiberContent, sugarContent, proteinContent, numberOfRecommendations, specifyingIngredients, user_id)
 Return Response: (id, calories, fatContent, satuatedfatContent, cholesterolContent, sodiumContent, carbohydrateContent, fiberContent, sugarContent, proteinContent, numberOfRecommendations, specifyingIngredients, user_id)
 
-
 3- [GET]   data that belong to form Diet Recommendation: http://127.0.0.1:8000/api/diet/{user_id}
 GET Response: (id, age, height, weight, gender, physical_activity, weight_loss_plan, meals, bmi, bmi_string, bmi_category, bmi_color, bmr, maintain_calories,user_id)
 
-
 4- [GET]   data that belong to form Custom Foods Recommendation: http://127.0.0.1:8000/api/custom_food/{user_id}
 GET Response: (id, calories, fatContent, satuatedfatContent, cholesterolContent, sodiumContent, carbohydrateContent, fiberContent, sugarContent, proteinContent, numberOfRecommendations, specifyingIngredients, user_id)
-
-
