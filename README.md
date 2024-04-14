@@ -1,6 +1,6 @@
 # Graduation-project
 
-Create APIs with Laravel 9.X for PT Lifestyle to customize a suitable diet for users based on their data, and the user can define some foods that need a diet generated with the help of AI.
+Create APIs with Laravel 9.x for PT Lifestyle to customize a suitable diet for users based on their data, and the user can define some foods that need a diet generated with the help of AI.
 
 ## Getting Started
 
